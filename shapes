@@ -1,0 +1,26 @@
+let x, y, angle;
+
+function setup() {
+  createCanvas(400, 400);
+  background(220);
+  x = width / 2;
+  y = height / 2;
+  angle = 0;
+}
+
+function draw() {
+  // Randomly change the angle
+  angle += random(-0.1, 0.1);
+
+  // Calculate the new x and y positions based on the angle
+  let newX = x + cos(angle) * 5;
+  let newY = y + sin(angle) * 5;
+
+  // Draw a line from the current position to the new position
+  stroke(0);
+  line(x, y, newX, newY);
+
+  // Update the current position
+  x = newX;
+  y = newY;
+}
